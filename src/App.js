@@ -4,16 +4,22 @@ import Login from "./components/login/Login";
 import './components/transferdata.css'
 import './components/course/c.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/home/Home";
+import './components/home/home.css'
+import Book from "./components/experiment/Book";
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      
+     <BrowserRouter> 
       <Routes>
         <Route path={'/'} element={<Login/>}></Route>
-        <Route path={'/Home'} element={<Course/>}></Route>
+        <Route path={'/course'} element={<Course/>}></Route>
+        <Route path={'/Home'} element={<Home/>}></Route>
+        <Route path={'/book'} element={<Book/>}></Route>
       </Routes>
-      </BrowserRouter>
+      </BrowserRouter> 
       {/* <Course/> */}
       {/* <Login/> */}
       {/* <Transferdata usertype="Admin" username="rithin" password="1234556"/> */}

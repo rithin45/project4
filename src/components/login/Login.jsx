@@ -1,11 +1,12 @@
 import { TextField } from '@mui/material'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
 const [u,uv]=useState('');
 const [p,pv]=useState('');
 const [error,setError]=useState(false);
+const navigate=useNavigate();
 
 const rdusername=(event)=>{
   event.preventDefault();
@@ -25,8 +26,9 @@ const checkfilldata=(event)=>{
 return;
   }
   else{
-    setError(false);
+  navigate('/Home');
   }
+  
 }
 
   return (
@@ -35,7 +37,8 @@ return;
         <h1>SIGN UP</h1>
       <TextField id="outlined-basic" label="Username" variant="outlined"  onChange={rdusername}/><br/><br/>
       <TextField id="outlined-basic" label="Password" variant="outlined" onChange={rdpassword}/><br/>
-      <button type="submit" onClick={checkfilldata}><Link to='/Home'>Submit</Link></button>
+      <button type="submit" onClick={checkfilldata}>Log in</button>
+      {error && 'Error occured'}
       </form>
     </div>
   )
