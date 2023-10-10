@@ -30,17 +30,18 @@ const Book = () => {
         else{
             setError(false);
             const myobj={
-                bookname:x,
-                author:y,
-                publisher:z
+                bookname:w,
+                author:x,
+                publisher:y
             }
-            fetch("https://store-9c063-default-rtdb.europe-west1.firebasedatabase.app/store.json",
+            fetch("https://store4-c11b5-default-rtdb.firebaseio.com/store.json",
             {
             method:"POST",
             body:JSON.stringify(myobj),
             headers:{"content-Type":"application/json"}
         }
             );
+            alert("record saved")
             }
         
     }

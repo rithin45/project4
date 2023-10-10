@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import './components/home/home.css'
 import Book from "./components/experiment/Book";
+import Bookview from "./components/experiment/Bookview";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path={'/course'} element={<Course/>}></Route>
         <Route path={'/Home'} element={<Home/>}></Route>
         <Route path={'/book'} element={<Book/>}></Route>
+        <Route path={'/bookview'} element={<Bookview/>}></Route>
       </Routes>
       </BrowserRouter> 
       {/* <Course/> */}
