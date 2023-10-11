@@ -1,12 +1,12 @@
 import { TextField } from '@mui/material'
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const Login = (props) => {
 const [u,uv]=useState('');
 const [p,pv]=useState('');
 const [error,setError]=useState(false);
-const navigate=useNavigate();
+// const navigate=useNavigate();
 
 const rdusername=(event)=>{
   event.preventDefault();
@@ -26,7 +26,8 @@ const checkfilldata=(event)=>{
 return;
   }
   else{
-  navigate('/Home');
+  // navigate('/Home');
+  props.checkLogin(u,p);
   }
   
 }
